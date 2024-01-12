@@ -28,7 +28,7 @@ function M.switch()
     local scan_opts = {
         respect_gitignore = true,
         -- Starts with anything but explicitly ends in "filename." (note the period is included!) 
-        search_pattern = "^.*" .. filename .. "%..*$";
+        search_pattern = "^.*" .. filename:gsub("%-", "%%-") .. "%..*$";
     }
 
     -- look for files that meet our above criteria
